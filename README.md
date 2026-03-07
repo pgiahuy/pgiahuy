@@ -2,7 +2,9 @@
 
 > Interests: Security, Cloud, Automation
 
-![streak](https://streak-stats.demolab.com?user=pgiahuy&theme=tokyonight)
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=pgiahuy&theme=tokyonight" height="180px"/>
+</p>
 
 #
 ### Backend
