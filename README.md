@@ -6,6 +6,10 @@
   <img src="https://streak-stats.demolab.com?user=pgiahuy&theme=tokyonight" height="180px"/>
 </p>
 
+![Stats](profile/stats.svg)
+
+![Top Langs](profile/top-langs.svg)
+
 #
 ### Backend
 ![Spring Boot](https://img.shields.io/badge/-SpringBoot-000?&logo=springboot)
