@@ -1,14 +1,13 @@
 # Phan Gia Huy <img src="https://komarev.com/ghpvc/?username=pgiahuy&style=for-the-badge&color=blue" align="right"/>
 > Interests: Security, Cloud, Automation
 
-
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=pgiahuy&theme=tokyonight&hide_border=true" height="180"/>
+  <img src="profile/streak.svg" height="180"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=pgiahuy&show_icons=true&theme=tokyonight&hide_border=true" width="48%" height="280px"/>
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pgiahuy&layout=compact&theme=tokyonight&hide=css,html&hide_border=true" width="40% "/>
+  <img src="profile/stats.svg" width="48%"/>
+  <img src="profile/top-langs.svg" width="40%"/>
 </p>
 
 #
