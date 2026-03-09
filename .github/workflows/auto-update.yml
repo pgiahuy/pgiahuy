@@ -21,7 +21,7 @@ jobs:
 
       - name: Generate GitHub stats
         run: |
-          curl -o profile/stats.svg "https://github-readme-stats-sigma-five.vercel.app/api?username=pgiahuy&show_icons=true&theme=tokyonight&hide_border=true""
+          curl -o profile/stats.svg "https://github-readme-stats-sigma-five.vercel.app/api?username=pgiahuy&show_icons=true&theme=tokyonight&hide_border=true"
 
       - name: Generate top languages
         run: |
