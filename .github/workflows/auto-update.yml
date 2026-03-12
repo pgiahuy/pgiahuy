@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # Ép Node.js 24 cho tất cả action
+
 jobs:
   stats:
     runs-on: ubuntu-latest
