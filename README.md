@@ -2,13 +2,14 @@
 > Interests: Security, Cloud, Automation
 
 <p align="center">
-  <img src="profile/streak.svg" height="180"/>
+  <img src="profile/streak.svg"  width="50%"/>
 </p>
 
 
 <p align="center">
-  <img src="profile/stats.svg" width="48%"/>
-  <img src="profile/top-langs.svg" width="40%"/>
+  <img src="profile/stats.svg" width="351px"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="profile/top-langs.svg" width="372px">
 </p>
 
 #
