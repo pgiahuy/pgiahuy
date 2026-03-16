@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate GitHub stats
         run: |
-          curl -o profile/stats.svg "https://github-readme-stats-sigma-five.vercel.app/api?username=pgiahuy&show_icons=true&theme=gruvbox&hide_border=true"
+          curl -o profile/stats.svg "https://github-readme-stats-sigma-five.vercel.app/api?username=pgiahuy&show_icons=true&theme=gruvbox&hide_border=true&count_private=true&include_all_commits=true"
 
       - name: Generate top languages
         run: |
@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate streak stats
         run: |
-          curl -o profile/streak.svg "https://streak-stats.demolab.com?user=pgiahuy&theme=gruvbox&hide_border=true"
+          curl -o profile/streak.svg "https://streak-stats.demolab.com?user=pgiahuy&theme=gruvbox&hide_border=true&count_private=true&include_all_commits=true"
 
       - name: Commit changes
         run: |
