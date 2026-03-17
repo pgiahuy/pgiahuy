@@ -20,6 +20,8 @@
 
 
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+
 
 ### [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Titan+One&duration=4&pause=1000&color=E3AD00&vCenter=true&repeat=false&width=435&height=24&lines=Database)](https://git.io/typing-svg)
 
