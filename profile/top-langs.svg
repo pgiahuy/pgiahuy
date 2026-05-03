@@ -65,7 +65,7 @@
             data-testid="lang-progress"
             x="0" 
             y="0"
-            width="149.18" 
+            width="131.07" 
             height="8"
             fill="#b07219"
           />
@@ -73,42 +73,42 @@
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="149.18" 
+            x="131.07" 
             y="0"
-            width="86.40" 
+            width="93.01" 
             height="8"
-            fill="#DA5B0B"
+            fill="#3178c6"
           />
         
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="235.58" 
+            x="224.07999999999998" 
             y="0"
-            width="64.43" 
+            width="75.91" 
             height="8"
-            fill="#3178c6"
+            fill="#DA5B0B"
           />
         
       
     <g transform="translate(0, 25)">
       <circle cx="5" cy="6" r="5" fill="#b07219" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Java 49.73%
+        Java 43.69%
       </text>
     </g>
   
     <g transform="translate(150, 25)">
-      <circle cx="5" cy="6" r="5" fill="#DA5B0B" />
+      <circle cx="5" cy="6" r="5" fill="#3178c6" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Jupyter Notebook 28.80%
+        TypeScript 31.00%
       </text>
     </g>
   
     <g transform="translate(0, 50)">
-      <circle cx="5" cy="6" r="5" fill="#3178c6" />
+      <circle cx="5" cy="6" r="5" fill="#DA5B0B" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        TypeScript 21.48%
+        Jupyter Notebook 25.30%
       </text>
     </g>
   
