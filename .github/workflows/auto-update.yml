@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # Ép Node.js 24 cho tất cả action
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  
 
 jobs:
   stats:
@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate top languages
         run: |
-          curl -o profile/top-langs.svg "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pgiahuy&layout=compact&theme=gruvbox&hide_border=true&hide=css,html"
+          curl -o profile/top-langs.svg "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pgiahuy&layout=compact&theme=gruvbox&hide_border=true&hide=css,html,jupyter%20notebook"
 
       - name: Generate streak stats
         run: |
