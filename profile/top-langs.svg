@@ -1,8 +1,8 @@
 
       <svg
         width="350"
-        height="150"
-        viewBox="0 0 350 150"
+        height="130"
+        viewBox="0 0 350 130"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -65,7 +65,7 @@
             data-testid="lang-progress"
             x="0" 
             y="0"
-            width="121.29" 
+            width="132.39" 
             height="8"
             fill="#b07219"
           />
@@ -73,9 +73,9 @@
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="121.29" 
+            x="132.39" 
             y="0"
-            width="91.92" 
+            width="100.33" 
             height="8"
             fill="#f1e05a"
           />
@@ -83,49 +83,32 @@
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="213.21" 
+            x="232.71999999999997" 
             y="0"
-            width="61.64" 
+            width="67.28" 
             height="8"
             fill="#3572A5"
-          />
-        
-          <rect
-            mask="url(#rect-mask)" 
-            data-testid="lang-progress"
-            x="274.85" 
-            y="0"
-            width="25.15" 
-            height="8"
-            fill="#DA5B0B"
           />
         
       
     <g transform="translate(0, 25)">
       <circle cx="5" cy="6" r="5" fill="#b07219" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Java 40.43%
+        Java 44.13%
       </text>
     </g>
   
     <g transform="translate(150, 25)">
       <circle cx="5" cy="6" r="5" fill="#f1e05a" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        JavaScript 30.64%
+        JavaScript 33.44%
       </text>
     </g>
   
     <g transform="translate(0, 50)">
       <circle cx="5" cy="6" r="5" fill="#3572A5" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Python 20.55%
-      </text>
-    </g>
-  
-    <g transform="translate(150, 50)">
-      <circle cx="5" cy="6" r="5" fill="#DA5B0B" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Jupyter Notebook 8.38%
+        Python 22.43%
       </text>
     </g>
   
