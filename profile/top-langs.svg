@@ -1,8 +1,8 @@
 
       <svg
         width="350"
-        height="150"
-        viewBox="0 0 350 150"
+        height="130"
+        viewBox="0 0 350 130"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -65,7 +65,7 @@
             data-testid="lang-progress"
             x="0" 
             y="0"
-            width="123.69" 
+            width="144.60" 
             height="8"
             fill="#b07219"
           />
@@ -73,9 +73,9 @@
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="123.69" 
+            x="144.6" 
             y="0"
-            width="93.27" 
+            width="103.78" 
             height="8"
             fill="#f1e05a"
           />
@@ -83,49 +83,32 @@
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="216.95999999999998" 
+            x="248.38" 
             y="0"
-            width="44.16" 
+            width="51.63" 
             height="8"
             fill="#3572A5"
-          />
-        
-          <rect
-            mask="url(#rect-mask)" 
-            data-testid="lang-progress"
-            x="261.12" 
-            y="0"
-            width="38.88" 
-            height="8"
-            fill="#3178c6"
           />
         
       
     <g transform="translate(0, 25)">
       <circle cx="5" cy="6" r="5" fill="#b07219" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Java 41.23%
+        Java 48.20%
       </text>
     </g>
   
     <g transform="translate(150, 25)">
       <circle cx="5" cy="6" r="5" fill="#f1e05a" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        JavaScript 31.09%
+        JavaScript 34.59%
       </text>
     </g>
   
     <g transform="translate(0, 50)">
       <circle cx="5" cy="6" r="5" fill="#3572A5" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Python 14.72%
-      </text>
-    </g>
-  
-    <g transform="translate(150, 50)">
-      <circle cx="5" cy="6" r="5" fill="#3178c6" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        TypeScript 12.96%
+        Python 17.21%
       </text>
     </g>
   
