@@ -1,8 +1,8 @@
 
       <svg
         width="350"
-        height="90"
-        viewBox="0 0 350 90"
+        height="130"
+        viewBox="0 0 350 130"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -65,16 +65,50 @@
             data-testid="lang-progress"
             x="0" 
             y="0"
-            width="300.00" 
+            width="163.98" 
             height="8"
-            fill="#dea584"
+            fill="#b07219"
+          />
+        
+          <rect
+            mask="url(#rect-mask)" 
+            data-testid="lang-progress"
+            x="163.98" 
+            y="0"
+            width="135.94" 
+            height="8"
+            fill="#f1e05a"
+          />
+        
+          <rect
+            mask="url(#rect-mask)" 
+            data-testid="lang-progress"
+            x="299.91999999999996" 
+            y="0"
+            width="10.08" 
+            height="8"
+            fill="#384d54"
           />
         
       
     <g transform="translate(0, 25)">
-      <circle cx="5" cy="6" r="5" fill="#dea584" />
+      <circle cx="5" cy="6" r="5" fill="#b07219" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Rust 100.00%
+        Java 54.66%
+      </text>
+    </g>
+  
+    <g transform="translate(150, 25)">
+      <circle cx="5" cy="6" r="5" fill="#f1e05a" />
+      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
+        JavaScript 45.31%
+      </text>
+    </g>
+  
+    <g transform="translate(0, 50)">
+      <circle cx="5" cy="6" r="5" fill="#384d54" />
+      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
+        Dockerfile 0.03%
       </text>
     </g>
   
