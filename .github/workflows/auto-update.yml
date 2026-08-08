@@ -27,10 +27,19 @@ jobs:
           curl -o profile/stats.svg "https://github-readme-stats-sigma-five.vercel.app/api?username=pgiahuy&show_icons=true&theme=gruvbox&hide_border=true&count_private=true&include_all_commits=true"
 
       - name: Generate top languages (Including contributions to other repos)
-        run: |
-          curl -o profile/top-langs.svg "https://metrics.lecoq.io/pgiahuy?plugins.languages=yes&plugins.languages.indepth=yes&plugins.languages.sections=most-used&plugins.languages.details=percentage&plugins.languages.limit=8&plugins.languages.ignored=html,css,jupyter%20notebook&config.base=&config.timezone=Asia/Ho_Chi_Minh"
-        env:
-          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: profile/top-langs.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: pgiahuy
+          base: ""
+          plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_limit: 8
+          plugin_languages_ignored: html, css, jupyter notebook
+          config_timezone: Asia/Ho_Chi_Minh
 
       - name: Generate streak stats
         run: |
