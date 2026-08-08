@@ -26,9 +26,11 @@ jobs:
         run: |
           curl -o profile/stats.svg "https://github-readme-stats-sigma-five.vercel.app/api?username=pgiahuy&show_icons=true&theme=gruvbox&hide_border=true&count_private=true&include_all_commits=true"
 
-      - name: Generate top languages
+      - name: Generate top languages (Including contributions to other repos)
         run: |
-          curl -o profile/top-langs.svg "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pgiahuy&layout=compact&theme=gruvbox&hide_border=true&hide=css,html,jupyter%20notebook"
+          curl -o profile/top-langs.svg "https://metrics.lecoq.io/pgiahuy?plugins.languages=yes&plugins.languages.indepth=yes&plugins.languages.sections=most-used&plugins.languages.details=percentage&plugins.languages.limit=8&plugins.languages.ignored=html,css,jupyter%20notebook&config.base=&config.timezone=Asia/Ho_Chi_Minh"
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
 
       - name: Generate streak stats
         run: |
