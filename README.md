@@ -1,44 +1,50 @@
-# [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Honk&size=54&pause=1000&vCenter=true&repeat=false&width=435&height=47&lines=PHAN+GIA+HUY)](https://git.io/typing-svg)
+# Phan Gia Huy
 
-> [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Jersey+15&pause=1000&color=D8AC00&vCenter=true&width=435&height=24&lines=Interests%3A+Security%2C+Cloud%2C+Automation)](https://git.io/typing-svg)
+Backend developer. Ho Chi Minh City.
 
+### Stack
 
-<p align="center">
-  <img src="profile/streak.svg"  width="50%"/>
+<!-- Each group is wrapped in a <p> so the badges stay on one line: GitHub renders a
+     bare <img> on its own source line as its own paragraph, which stacks them vertically. -->
+<p>
+<b>Backend</b><br>
+<img src="https://img.shields.io/badge/Spring_MVC-21262d?style=flat-square&logo=spring">
+<img src="https://img.shields.io/badge/Spring_Boot-21262d?style=flat-square&logo=springboot">
+<img src="https://img.shields.io/badge/Flask-21262d?style=flat-square&logo=flask">
+<img src="https://img.shields.io/badge/Axum-21262d?style=flat-square&logo=rust">
 </p>
 
-
-<p align="center">
-  <img src="profile/stats.svg" width="351px"/>
-  &nbsp;&nbsp;&nbsp;
-  <img src="profile/top-langs.svg" width="372px">
+<p>
+<b>Data</b><br>
+<img src="https://img.shields.io/badge/MySQL-21262d?style=flat-square&logo=mysql">
+<img src="https://img.shields.io/badge/PostgreSQL-21262d?style=flat-square&logo=postgresql">
+<img src="https://img.shields.io/badge/MongoDB-21262d?style=flat-square&logo=mongodb">
+<img src="https://img.shields.io/badge/Redis-21262d?style=flat-square&logo=redis">
+<img src="https://img.shields.io/badge/Qdrant-21262d?style=flat-square&logo=qdrant">
 </p>
 
-#
-<!-- ### [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Titan+One&duration=4&pause=1000&color=E3AD00&vCenter=true&repeat=false&width=435&height=24&lines=Backend)](https://git.io/typing-svg) -->
+<p>
+<b>Infrastructure</b><br>
+<img src="https://img.shields.io/badge/Docker-21262d?style=flat-square&logo=docker">
+<img src="https://img.shields.io/badge/Nginx-21262d?style=flat-square&logo=nginx">
+<img src="https://img.shields.io/badge/Ubuntu-21262d?style=flat-square&logo=ubuntu">
+<img src="https://img.shields.io/badge/Cloudflare-21262d?style=flat-square&logo=cloudflare">
+</p>
 
+### Activity
 
+<!-- The stats card ignores card_width, so its 495x165 is fixed. top-langs ships at 320x175,
+     so it is scaled to 302x165 (both have a viewBox, so this stays proportional) - that
+     makes the two borders exactly the same height on the row. -->
+<p align="center">
+<img src="profile/stats.svg" width="495" height="165" align="top">
+<img src="profile/top-langs.svg" width="302" height="165" align="top">
+</p>
 
-![Spring MVC](https://img.shields.io/badge/Spring_MVC-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
-![Axum](https://img.shields.io/badge/Axum-242026?style=for-the-badge&logo=tokio&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-![Postgres](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
-![Qdrant](https://img.shields.io/badge/Qdrant-%23A31F34?style=for-the-badge&logo=qdrant&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-E9433F?style=for-the-badge&logo=ubuntu&logoColor=white)
-![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
+<p align="center">
+<img src="profile/streak.svg" width="495" height="195">
+</p>
 
-
-<!--### [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Titan+One&duration=4&pause=1000&color=E3AD00&vCenter=true&repeat=false&width=435&height=24&lines=Database)](https://git.io/typing-svg)-->
-
-
-
-<!--### [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Titan+One&duration=4&pause=1000&color=E3AD00&vCenter=true&repeat=false&width=435&height=24&lines=Deploy)](https://git.io/typing-svg)-->
-
-
+<!-- TODO: contact line, e.g.
+Reach me at <your-email> · [LinkedIn](<your-linkedin-url>)
+-->

@@ -8,9 +8,6 @@ on:
 permissions:
   contents: write
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  
-
 jobs:
   stats:
     runs-on: ubuntu-latest
@@ -22,22 +19,70 @@ jobs:
       - name: Create profile folder
         run: mkdir -p profile
 
-      - name: Generate GitHub stats
+      # Downloads into a temp file and only replaces the committed SVG when the
+      # response really is an SVG. The stats services answer errors with HTTP 200
+      # and an SVG/HTML error card, so a blind `curl -o` would overwrite a good
+      # image with "Something went wrong" and leave the README broken until the
+      # next successful run.
+      - name: Fetch stats cards
         run: |
-          curl -o profile/stats.svg "https://github-readme-stats-sigma-five.vercel.app/api?username=pgiahuy&show_icons=true&theme=gruvbox&hide_border=true&count_private=true&include_all_commits=true"
+          set -u
+          failed=0
 
-      - name: Generate top languages
-        run: |
-          curl -o profile/top-langs.svg "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pgiahuy&layout=compact&theme=gruvbox&hide_border=true&hide=css,html,jupyter%20notebook"
+          fetch() {
+            name="$1"
+            url="$2"
+            tmp="$(mktemp)"
 
-      - name: Generate streak stats
-        run: |
-          curl -o profile/streak.svg "https://streak-stats.demolab.com?user=pgiahuy&theme=gruvbox&hide_border=true&count_private=true&include_all_commits=true"
+            if ! curl -sS --fail --max-time 30 --retry 3 --retry-delay 5 -o "$tmp" "$url"; then
+              echo "::warning::$name: request failed, keeping the existing image"
+              failed=1
+              return
+            fi
+
+            if ! head -c 512 "$tmp" | grep -qi '<svg'; then
+              echo "::warning::$name: response is not an SVG, keeping the existing image"
+              failed=1
+              return
+            fi
+
+            if grep -qi 'Something went wrong\|Maximum retries exceeded' "$tmp"; then
+              echo "::warning::$name: service returned an error card, keeping the existing image"
+              failed=1
+              return
+            fi
+
+            mv "$tmp" "profile/$name.svg"
+            echo "$name: updated"
+          }
+
+          # Transparent background with muted grey/blue text, so the cards sit
+          # flat in the README instead of reading as three loud posters.
+          host="https://github-readme-stats-eight-theta.vercel.app"
+          colors="bg_color=00000000&title_color=58a6ff&text_color=8b949e&icon_color=8b949e"
+
+          fetch stats "$host/api?username=pgiahuy&show_icons=true&count_private=true&include_all_commits=true&hide_title=true&$colors"
+          fetch top-langs "$host/api/top-langs/?username=pgiahuy&hide=css,html,jupyter%20notebook&hide_title=true&langs_count=5&card_width=320&$colors"
+          fetch streak "https://streak-stats.demolab.com?user=pgiahuy&border=30363d&background=00000000&stroke=30363d&ring=58a6ff&fire=58a6ff&currStreakLabel=8b949e&sideLabels=8b949e&dates=6e7681&currStreakNum=c9d1d9&sideNums=c9d1d9"
+
+          # This github-readme-stats fork ignores border_color and always ships the card
+          # border as #E4E2E2, and the language bars as #ddd tracks - both read as bright
+          # white frames on a dark README. Recolour them to GitHub's own border grey.
+          sed -i 's/#E4E2E2/#30363d/g; s/"#ddd"/"#30363d"/g' profile/stats.svg profile/top-langs.svg
+
+          echo "failed=$failed" >> "$GITHUB_ENV"
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add profile/*.svg
-          git commit -m "chore: update github stats" || exit 0
-          git push
+          git commit -m "chore: update github stats" && git push || echo "nothing to commit"
+
+      # Surfaces a red run when a card could not be refreshed, so a service going
+      # away is visible instead of silently freezing the images.
+      - name: Report fetch failures
+        if: env.failed == '1'
+        run: |
+          echo "::error::One or more stats cards could not be refreshed (see warnings above)"
+          exit 1
