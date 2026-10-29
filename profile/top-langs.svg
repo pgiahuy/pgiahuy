@@ -43,7 +43,7 @@
     <svg data-testid="lang-items" x="25">
       <g transform="translate(0, 0)">
     <text data-testid="lang-name" x="2" y="15" class="lang-name">Rust</text>
-    <text x="235" y="34" class="lang-name">49.73%</text>
+    <text x="235" y="34" class="lang-name">50.01%</text>
     <svg width="225">
       <rect rx="5" ry="5" x="0" y="25" width="225" height="8" fill="#30363d"></rect>
       <rect
@@ -51,13 +51,13 @@
         fill="#dea584"
         rx="5" ry="5" x="0" y="25"
         data-testid="lang-progress"
-        width="49.73%"
+        width="50.01%"
       >
       </rect>
     </svg>
   </g><g transform="translate(0, 40)">
     <text data-testid="lang-name" x="2" y="15" class="lang-name">Java</text>
-    <text x="235" y="34" class="lang-name">19.75%</text>
+    <text x="235" y="34" class="lang-name">19.53%</text>
     <svg width="225">
       <rect rx="5" ry="5" x="0" y="25" width="225" height="8" fill="#30363d"></rect>
       <rect
@@ -65,13 +65,13 @@
         fill="#b07219"
         rx="5" ry="5" x="0" y="25"
         data-testid="lang-progress"
-        width="19.75%"
+        width="19.53%"
       >
       </rect>
     </svg>
   </g><g transform="translate(0, 80)">
     <text data-testid="lang-name" x="2" y="15" class="lang-name">JavaScript</text>
-    <text x="235" y="34" class="lang-name">16.75%</text>
+    <text x="235" y="34" class="lang-name">16.56%</text>
     <svg width="225">
       <rect rx="5" ry="5" x="0" y="25" width="225" height="8" fill="#30363d"></rect>
       <rect
@@ -79,13 +79,13 @@
         fill="#f1e05a"
         rx="5" ry="5" x="0" y="25"
         data-testid="lang-progress"
-        width="16.75%"
+        width="16.56%"
       >
       </rect>
     </svg>
   </g><g transform="translate(0, 120)">
     <text data-testid="lang-name" x="2" y="15" class="lang-name">TypeScript</text>
-    <text x="235" y="34" class="lang-name">13.77%</text>
+    <text x="235" y="34" class="lang-name">13.90%</text>
     <svg width="225">
       <rect rx="5" ry="5" x="0" y="25" width="225" height="8" fill="#30363d"></rect>
       <rect
@@ -93,7 +93,7 @@
         fill="#3178c6"
         rx="5" ry="5" x="0" y="25"
         data-testid="lang-progress"
-        width="13.77%"
+        width="13.9%"
       >
       </rect>
     </svg>
