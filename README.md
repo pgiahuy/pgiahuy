@@ -10,8 +10,8 @@ Backend developer. Ho Chi Minh City.
 <b>Backend</b><br>
 <img src="https://img.shields.io/badge/Spring_MVC-21262d?style=flat-square&logo=spring">
 <img src="https://img.shields.io/badge/Spring_Boot-21262d?style=flat-square&logo=springboot">
-<img src="https://img.shields.io/badge/Flask-21262d?style=flat-square&logo=flask">
 <img src="https://img.shields.io/badge/Axum-21262d?style=flat-square&logo=rust">
+<img src="https://img.shields.io/badge/Flask-21262d?style=flat-square&logo=flask">
 </p>
 
 <p>
