@@ -41,7 +41,7 @@ Backend developer. Ho Chi Minh City.
 </p>
 
 <p align="center">
-<img src="profile/streak.svg" width="495" height="195">
+<img src="profile/streak.svg" width="495">
 </p>
 
 <!-- TODO: contact line, e.g.

@@ -19,9 +19,9 @@ jobs:
       - name: Create profile folder
         run: mkdir -p profile
 
-      # The stats and languages cards are rendered inside this workflow by lowlighter/metrics instead of a
-      # third-party service: the public github-readme-stats deployment used before was disabled (HTTP 402).
-      # output_action: none only writes the files to /metrics_renders; "Commit changes" pushes them as before.
+      # All three cards are rendered inside this workflow by lowlighter/metrics instead of third-party services:
+      # the public github-readme-stats deployment used before was disabled (HTTP 402). output_action: none only
+      # writes the files to /metrics_renders; "Commit changes" pushes them as before.
       - name: Render stats card
         uses: lowlighter/metrics@v3.34
         with:
@@ -45,32 +45,20 @@ jobs:
           plugin_languages_limit: 5
           plugin_languages_details: percentage
 
-      - name: Move rendered cards
-        run: sudo mv /metrics_renders/stats.svg /metrics_renders/top-langs.svg profile/ && sudo chown "$USER" profile/*.svg
+      - name: Render streak card
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: pgiahuy
+          filename: streak.svg
+          output_action: none
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          config_timezone: Asia/Ho_Chi_Minh
 
-      # The streak card still comes from streak-stats.demolab.com. Replace the file only when the response
-      # really is an SVG: the service answers errors with HTTP 200 and an error card, and a blind overwrite
-      # would leave the README broken until the next successful run.
-      - name: Fetch streak card
-        run: |
-          set -u
-          failed=0
-          tmp="$(mktemp)"
-          url="https://streak-stats.demolab.com?user=pgiahuy&border=30363d&background=00000000&stroke=30363d&ring=58a6ff&fire=58a6ff&currStreakLabel=8b949e&sideLabels=8b949e&dates=6e7681&currStreakNum=c9d1d9&sideNums=c9d1d9"
-          if ! curl -sS --fail --max-time 30 --retry 3 --retry-delay 5 -o "$tmp" "$url"; then
-            echo "::warning::streak: request failed, keeping the existing image"
-            failed=1
-          elif ! head -c 512 "$tmp" | grep -qi '<svg'; then
-            echo "::warning::streak: response is not an SVG, keeping the existing image"
-            failed=1
-          elif grep -qi 'Something went wrong\|Maximum retries exceeded' "$tmp"; then
-            echo "::warning::streak: service returned an error card, keeping the existing image"
-            failed=1
-          else
-            mv "$tmp" profile/streak.svg
-            echo "streak: updated"
-          fi
-          echo "failed=$failed" >> "$GITHUB_ENV"
+      - name: Move rendered cards
+        run: sudo mv /metrics_renders/stats.svg /metrics_renders/top-langs.svg /metrics_renders/streak.svg profile/ && sudo chown "$USER" profile/*.svg
 
       - name: Commit changes
         run: |
@@ -78,11 +66,3 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add profile/*.svg
           git commit -m "chore: update github stats" && git push || echo "nothing to commit"
-
-      # Surfaces a red run when the streak card could not be refreshed, so the service going
-      # away is visible instead of silently freezing the image.
-      - name: Report fetch failures
-        if: env.failed == '1'
-        run: |
-          echo "::error::One or more stats cards could not be refreshed (see warnings above)"
-          exit 1
