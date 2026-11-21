@@ -11,7 +11,7 @@ const cards = [
   {
     name: "stats",
     handler: "index.js",
-    query: { username: "pgiahuy", show_icons: "true", include_all_commits: "true", hide_title: "true", ...colors },
+    query: { username: "pgiahuy", show_icons: "true", include_all_commits: "true", hide_title: "true", hide_rank: "true", ...colors },
   },
   {
     name: "top-langs",
