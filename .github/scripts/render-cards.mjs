@@ -16,7 +16,7 @@ const cards = [
   {
     name: "top-langs",
     handler: "top-langs.js",
-    query: { username: "pgiahuy", hide: "css,html,jupyter notebook", hide_title: "true", langs_count: "5", card_width: "320", ...colors },
+    query: { username: "pgiahuy", hide: "css,html,jupyter notebook", hide_title: "true", langs_count: "4", card_width: "320", ...colors },
   },
 ];
 
