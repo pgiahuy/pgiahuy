@@ -33,15 +33,20 @@ Backend developer. Ho Chi Minh City.
 
 ### Activity
 
-<!-- The stats and languages cards are rendered by lowlighter/metrics and set their own height
-     (both have a viewBox), so only the width is fixed here. -->
+<!-- The stats card ignores card_width, so its 495x165 is fixed. top-langs ships at 320x175,
+     so it is scaled to 302x165 (both have a viewBox, so this stays proportional) - that
+     makes the two borders exactly the same height on the row. -->
 <p align="center">
-<img src="profile/stats.svg" width="495" align="top">
-<img src="profile/top-langs.svg" width="302" align="top">
+<img src="profile/stats.svg" width="495" height="165" align="top">
+<img src="profile/top-langs.svg" width="302" height="165" align="top">
 </p>
 
 <p align="center">
-<img src="profile/streak.svg" width="495">
+<img src="profile/streak.svg" width="495" height="195">
+</p>
+
+<p align="center">
+<img src="profile/calendar.svg" width="495">
 </p>
 
 <!-- TODO: contact line, e.g.

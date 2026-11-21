@@ -16,49 +16,73 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create profile folder
-        run: mkdir -p profile
-
-      # All three cards are rendered inside this workflow by lowlighter/metrics instead of third-party services:
-      # the public github-readme-stats deployment used before was disabled (HTTP 402). output_action: none only
-      # writes the files to /metrics_renders; "Commit changes" pushes them as before.
-      - name: Render stats card
-        uses: lowlighter/metrics@v3.34
+      # The cards used to come from hosted deployments of github-readme-stats and
+      # github-readme-streak-stats; the public stats deployment was disabled (HTTP 402).
+      # Both projects are open source (MIT), so they now run here at pinned versions
+      # with this account's token, and the cards keep their previous look.
+      - name: Checkout github-readme-stats
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: pgiahuy
-          filename: stats.svg
-          output_action: none
-          base: activity, community, repositories
-          config_timezone: Asia/Ho_Chi_Minh
+          repository: anuraghazra/github-readme-stats
+          ref: 54a7985aeefda00d5eadb55b80c17c7f976c37d2
+          path: .cards/readme-stats
 
-      - name: Render languages card
-        uses: lowlighter/metrics@v3.34
+      - name: Checkout github-readme-streak-stats
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: pgiahuy
-          filename: top-langs.svg
-          output_action: none
-          base: ""
-          plugin_languages: yes
-          plugin_languages_ignored: html, css, jupyter notebook
-          plugin_languages_limit: 5
-          plugin_languages_details: percentage
+          repository: DenverCoder1/github-readme-streak-stats
+          ref: v1.8.2
+          path: .cards/streak-stats
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Render stats and languages cards
+        env:
+          PAT_1: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          npm ci --omit=dev --ignore-scripts --no-audit --no-fund --prefix .cards/readme-stats
+          node .github/scripts/render-cards.mjs
+
+      # The streak project is a small PHP app: serve it locally and request the card
+      # with the same parameters as before. Its token comes from a .env file in the
+      # checkout, which is never committed (only profile/*.svg is added below).
       - name: Render streak card
+        env:
+          TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          set -u
+          cd .cards/streak-stats
+          composer install --no-dev --no-interaction --no-progress --quiet
+          printf 'TOKEN=%s\n' "$TOKEN" > .env
+          php -S 127.0.0.1:8000 -t src > /tmp/streak-server.log 2>&1 &
+          for _ in $(seq 1 20); do curl -s -o /dev/null http://127.0.0.1:8000/ && break; sleep 0.5; done
+          tmp="$(mktemp)"
+          curl -sS --fail --max-time 60 -o "$tmp" "http://127.0.0.1:8000/?user=pgiahuy&border=30363d&background=00000000&stroke=30363d&ring=58a6ff&fire=58a6ff&currStreakLabel=8b949e&sideLabels=8b949e&dates=6e7681&currStreakNum=c9d1d9&sideNums=c9d1d9"
+          if ! head -c 512 "$tmp" | grep -qi '<svg' || grep -qi 'Something went wrong' "$tmp"; then
+            echo "::error::streak: the card did not render"; cat /tmp/streak-server.log; exit 1
+          fi
+          mv "$tmp" ../../profile/streak.svg
+          echo "streak: updated"
+
+      # The 3D contributions calendar is drawn by lowlighter/metrics (isocalendar plugin).
+      # output_action: none only writes the file to /metrics_renders on the runner.
+      - name: Render contributions calendar
         uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: pgiahuy
-          filename: streak.svg
+          filename: calendar.svg
           output_action: none
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           config_timezone: Asia/Ho_Chi_Minh
 
-      - name: Move rendered cards
-        run: sudo mv /metrics_renders/stats.svg /metrics_renders/top-langs.svg /metrics_renders/streak.svg profile/ && sudo chown "$USER" profile/*.svg
+      - name: Move calendar card
+        run: sudo mv /metrics_renders/calendar.svg profile/ && sudo chown "$USER" profile/calendar.svg
 
       - name: Commit changes
         run: |
